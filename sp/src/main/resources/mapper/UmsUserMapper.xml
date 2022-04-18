@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pantao.superprofessor.mapper.UmsUserMapper">
+    <resultMap id="UserVO" type="com.pantao.superprofessor.model.vo.UserVO">
+        <id column="id" property="id"/>
+        <result column="email" property="email"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_time" property="modifyTime"/>
+        <result column="username" property="username"/>
+        <result column="avatar" property="avatar"/>
+        <result column="password" property="password"/>
+        <result column="alias" property="alias"/>
+        <result column="bio" property="bio"/>
+    </resultMap>
+
+    <select id="selectListAndPage" resultMap="UserVO">
+        SELECT
+        t.id,t.email,
+        t.create_time ,t.modify_time ,
+        t.username,t.avatar,t.password
+        FROM ums_user t
+    </select>
+
+</mapper>
